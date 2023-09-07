@@ -1,6 +1,7 @@
 import { Schema, model } from "mongoose";
 import { TYPE_OF_FILTERS } from "../commons/constans.mjs";
 
+
 const ProcessSchema = new Schema(
   {
     filters: {
