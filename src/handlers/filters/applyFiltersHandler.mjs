@@ -1,5 +1,9 @@
+import applyFilters from "../../controllers/applyFilters.mjs";
+
 const applyFiltersHandler = async (req, res, next) => {
-  res.send("applyFiltersHandler");
+  const body = req.body;
+  const response = applyFilters(body);
+  res.send(response);
 }
 
 export default applyFiltersHandler;
