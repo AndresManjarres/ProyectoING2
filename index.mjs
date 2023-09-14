@@ -2,7 +2,7 @@ import Express  from "express";
 import bodyParser from "body-parser";
 import { startConnection } from "./src/mongo/index.mjs";
 import FiltersRouter from "./src/handlers/filters/index.mjs";
-import { Boom } from "@hapi/boom";
+import Boom from "@hapi/boom";
 
 const app = Express();
 app.use(bodyParser.json());
@@ -13,6 +13,8 @@ app.get("/", (req, res) =>{
   res.send("OK")
 })
 
+app.use("/images", FiltersRouter);
+
 app.use((error, req, res, next ) =>{
   if(error){
     let err = Boom.isBoom(error) ? error: Boom.internal(error)
@@ -20,9 +22,10 @@ app.use((error, req, res, next ) =>{
     const payload = err.output.payload;
     return res.status(statusCode).json(payload)
   }
+
+  return next;
 })
 
-app.use("/images", FiltersRouter);
 
 const startServer = async () => {
   await startConnection();

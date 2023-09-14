@@ -1,6 +1,7 @@
-import { BLUR_FILTER, GREYSCALE_FILTER, NEGATIVE_FILTER } from "../commons/constans.mjs";
-import Process from "../models/Process.mjs"
+import { BLUR_FILTER, GREYSCALE_FILTER, NEGATIVE_FILTER } from "../../commons/constans.mjs";
+import Process from "../../models/Process.mjs"
 import Joi from "joi";
+import Boom from "@hapi/boom";
 
 const PayloadValidation = Joi.object({
   filters: Joi.array().min(1).items(Joi.string().valid(
@@ -19,6 +20,7 @@ const applyFilters = async (payload) => {
   }
 
   const newProcess = new Process();
+
   newProcess.filters = payload.filters;
 
   await newProcess.save();
