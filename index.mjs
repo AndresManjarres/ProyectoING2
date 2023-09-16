@@ -3,11 +3,12 @@ import bodyParser from "body-parser";
 import { startConnection } from "./src/mongo/index.mjs";
 import FiltersRouter from "./src/handlers/filters/index.mjs";
 import Boom from "@hapi/boom";
+import { PORT } from "./src/commons/env.mjs";
 
 const app = Express();
 app.use(bodyParser.json());
 
-const PORT = 3000;
+// Se borro const PORT = 3000;
 
 app.get("/", (req, res) =>{
   res.send("OK")
@@ -31,7 +32,7 @@ const startServer = async () => {
   await startConnection();
 
   app.listen(PORT, () => {
-    console.log("http://localhost:3000")
+    console.log(`http://localhost:${PORT}`)
   })
 }
 
