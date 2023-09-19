@@ -10,6 +10,6 @@ COPY /src ./src/
 ENV PORT 5001
 EXPOSE 5001
 
-RUN npm install --production
+RUN npm install --omit=dev
 
 ENTRYPOINT ["npm", "start"]

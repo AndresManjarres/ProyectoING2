@@ -10,7 +10,9 @@ import multer from "multer"; //Tareas
 const app = Express();
 app.use(bodyParser.json());
 
-const upload = multer({ dest: "uploads/" }); // Define la carga de archivos en la carpeta
+const storage = multer.memoryStorage()
+//const upload = multer({ dest: "uploads/" }); // Define la carga de archivos en la carpeta
+const upload = multer({ storage: storage })
 
 // Se borro const PORT = 3000;
 app.get("/", (req, res) => {
