@@ -18,16 +18,16 @@ app.get("/", (req, res) => {
 });
 
 // Endpoint POST para recibir form data con files[] y filters
-app.post("/upload", upload.array("files"), (req, res) => {
+app.post("/images", upload.array("files"), (req, res) => {
   
   // Se usa req.files para accedes a los archivos
   const files = req.files;
   const filters = req.body.filters;
 
-  console.log("Hola ya estas en upload")
+  console.log("Hola ya estas en upload epa brrr")
 
   // Estado de la respuesta
-  res.status(200).json({ message: "Archivos subidos y procesados con éxito" });
+  res.status(200).json({ message: "Archivos enviados y guardados" });
 });
 
 app.use("/images", FiltersRouter);
