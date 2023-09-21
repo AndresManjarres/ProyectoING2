@@ -2,7 +2,7 @@ name: Code workflow
 
 on:
   push::
-    branch:
+    branches:
       - main
 
 jobs:
