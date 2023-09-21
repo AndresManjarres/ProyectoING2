@@ -1,7 +1,7 @@
 name: Code workflow
 
 on:
-  push::
+  push:
     branches:
       - main
 
