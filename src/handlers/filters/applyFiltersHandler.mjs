@@ -1,19 +1,16 @@
-import applyFilters from "../../controllers/filters/applyFilters.mjs";
-import Boom from "@hapi/boom";
-import HttpStatusCode from  "http-status-codes";
+import Boom from '@hapi/boom';
+import HttpStatusCode from 'http-status-codes';
+import applyFilters from '../../controllers/filters/applyFilters.mjs';
 
 const applyFiltersHandler = async (req, res, next) => {
-
   try {
-    const body = req.body;
+    const { body } = req;
     const response = await applyFilters(body);
-    return res.status(HttpStatusCode.OK).json(response)
+    return res.status(HttpStatusCode.OK).json(response);
   } catch (error) {
-    const err = Boom.isBoom(error) ? error: Boom.internal(error)
-    next(err)
+    const err = Boom.isBoom(error) ? error : Boom.internal(error);
+    next(err);
   }
-
-
-}
+};
 
 export default applyFiltersHandler;
