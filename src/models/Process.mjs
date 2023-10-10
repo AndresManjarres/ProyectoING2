@@ -1,6 +1,5 @@
-import { Schema, model } from "mongoose";
-import { TYPE_OF_FILTERS } from "../commons/constans.mjs";
-
+import { Schema, model } from 'mongoose';
+import { TYPE_OF_FILTERS } from '../commons/constans.mjs';
 
 const ProcessSchema = new Schema(
   {
@@ -16,9 +15,9 @@ const ProcessSchema = new Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
-const ProcesModel = model("process", ProcessSchema)
+const ProcesModel = model('process', ProcessSchema);
 
 export default ProcesModel;
