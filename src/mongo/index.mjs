@@ -5,3 +5,5 @@ export const startConnection = async () => {
   const url = encodeURI(MONGO_URI);
   await mongoose.connect(url);
 };
+
+export default startConnection;

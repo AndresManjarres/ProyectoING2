@@ -40,6 +40,7 @@ const startServer = async () => {
   await startConnection();
 
   app.listen(PORT, () => {
+    // eslint-disable-next-line
     console.log(`http://localhost:${PORT}`);
   });
 };

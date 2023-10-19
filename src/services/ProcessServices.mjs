@@ -32,7 +32,7 @@ class ProcessServices {
     const imagesPromises = images.map((image) => this.minioService.saveImage(image));
 
     const imageName = await Promise.all(imagesPromises);
-
+    // eslint-disable-next-line
     console.log(imageName);
 
     return process;
