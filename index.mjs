@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
   res.send('OK');
 });
 
-// Endpoint POST para recibir form data con files[] y filters
+// Endpoint POST para recibir form data con files[] y filters[]
 
 app.use('/images', FiltersRouter);
 

@@ -1,5 +1,18 @@
-import ProcesModel from '../models/Process.mjs';
+import ProcessModel from '../models/Process.mjs';
 
+class ProcessRepository {
+  // eslint-disable-next-line class-methods-use-this
+  async save(filters) {
+    const newProcess = new ProcessModel({
+      filters,
+    });
+
+    const savedProcess = await newProcess.save();
+    return savedProcess;
+  }
+}
+
+/* Codigo antiguo
 class ProcessRepository {
   // eslint-disable-next-line class-methods-use-this
   async save(process) {
@@ -9,5 +22,6 @@ class ProcessRepository {
     return newProcess;
   }
 }
+*/
 
 export default ProcessRepository;

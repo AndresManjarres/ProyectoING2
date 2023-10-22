@@ -18,6 +18,6 @@ const ProcessSchema = new Schema(
   },
 );
 
-const ProcesModel = model('process', ProcessSchema);
+const ProcessModel = model('Process', ProcessSchema);
 
-export default ProcesModel;
+export default ProcessModel;
