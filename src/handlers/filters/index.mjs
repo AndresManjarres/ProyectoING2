@@ -4,8 +4,9 @@ import applyFiltersHandler from './applyFiltersHandler.mjs';
 
 const router = Router();
 
-// Parte del multer con POST
-const upload = multer({ storage: multer.memoryStorage() });
+const storage = multer.memoryStorage();
+
+const upload = multer({ storage, limits: { fileSize: 1024 * 1024 * 50 } });
 
 router.get('/', (req, res) => {
   res.send('OK images GET');

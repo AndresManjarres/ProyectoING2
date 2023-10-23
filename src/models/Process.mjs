@@ -12,6 +12,13 @@ const ProcessSchema = new Schema(
         },
       ],
     },
+    images: [
+      {
+        type: {
+          type: String,
+        },
+      },
+    ],
   },
   {
     timestamps: true,

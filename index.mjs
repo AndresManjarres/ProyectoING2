@@ -18,11 +18,10 @@ app.get('/', (req, res) => {
 
 app.use('/images', FiltersRouter);
 
-// Define a GET endpoint that retrieves a document by ID
+// Metodo get para obtener el documento de Mongo
 app.get('/images/:id', async (req, res, next) => {
   try {
-    const { id } = req.params; // Get the ID from the URL
-
+    const { id } = req.params; // Id inscrito en la URL
     const document = await ProcessModel.findById(id);
 
     if (!document) {
