@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #040404; /* Cambia el color de fondo según tus preferencias */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+ul {
+  list-style: none; /* Elimina los puntos de las listas */
+  padding: 0;
+  text-align: center; /* Centra el texto en la lista */
+}
+
+li {
+  color: rgb(231, 231, 231); /* Color de texto blanco */
+  margin: 10px 0; /* Espacio entre elementos de la lista */
+}
+
+.header {
+  text-align: center; /* Centra el contenido en el encabezado */
+  padding: 20px;
+  color: rgb(198, 198, 198); /* Color de texto blanco */
+}
+
+.letra{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.letra2{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f6fc9ebd;
+}
+.barra{
+  color: rgb(252, 252, 252);
+}
+.barra2{
+  color: rgba(0, 170, 255, 0.662);
+}

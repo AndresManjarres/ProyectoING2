@@ -12,8 +12,10 @@ const app = Express();
 app.use(bodyParser.json());
 app.use(buildContainer);
 
+app.use(Express.static('public'));
+
 app.get('/', (req, res) => {
-  res.send('OK');
+  res.send(`${__dirname}/public/index.html`);
 });
 
 app.use('/images', FiltersRouter);
