@@ -15,7 +15,7 @@ app.use(buildContainer);
 app.use(Express.static('public'));
 
 app.get('/', (req, res) => {
-  res.send(`${__dirname}/public/index.html`);
+  res.send('ok');
 });
 
 app.use('/images', FiltersRouter);
