@@ -1,4 +1,5 @@
 import HttpStatusCodes from 'http-status-codes';
+/* eslint import/no-extraneous-dependencies: */
 import {
   describe,
   expect,
